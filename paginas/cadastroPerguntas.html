@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro de Perguntas</title>
+	<link rel="stylesheet" type="text/css" href="../css/tabsPerg.css">
+</head>
+<body>
+
+	<div class="titulo_perg"><h1>Cadastro de Perguntas</h1></div>
+	
+	<main>
+	<nav class="tabs_nav">
+		<ul>
+			<li>
+				<input type="radio" name="tabs" id="tab1" class="tabsInp" checked/>
+				<label for="tab1"><b>Multipla Escolha</b></label>				
+				<div class="tab_content">
+						<form>
+							Titulo da Pergunta ME:
+							<input type="text" id="txtarea" name="titulo"/><br>
+							Assunto: <input type="textarea" name="assunto" id="txtarea" />
+							<br><br>
+							Respostas:<br>
+							A)<input type="text" id="A"><br>
+							B)<input type="text" id="B"><br>
+							C)<input type="text" id="C"><br>
+							D)<input type="text" id="D"><br>
+							E)<input type="text" id="E"><br>
+							<input type="submit" value="Gravar"/><br>
+						</form>
+				</div>
+			</li>
+			<li>
+				<input type="radio" name="tabs" id="tab2" class="tabsInp"/>
+				<label for="tab2"><b>Associação</b></label>				
+				<div class="tab_content">
+						<form>
+							<label>Titulo da pergunta ASS</label>
+							<input type="text" name="titulo"/>
+						</form>
+				</div>
+			</li>
+			<li>
+				<input type="radio" name="tabs" id="tab3" class="tabsInp"/>
+				<label for="tab3"><b>Discursiva</b></label>				
+				<div class="tab_content">
+						<form>
+							<label>Titulo da pergunta DIS</label>
+							<input type="text" name="titulo"/>
+						</form>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	</main>
+</body>
+</html>
