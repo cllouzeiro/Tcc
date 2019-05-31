@@ -1,3 +1,8 @@
+<?php
+	if($_SESSION["login"]==0){
+		header('Location:../index.html');
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
