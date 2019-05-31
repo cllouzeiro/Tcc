@@ -1,0 +1,6 @@
+O presente artigo tem por objetivo apresentar a ferramenta web de interação professor e aluno denominada "Portal Fixar".
+Consiste em um site para uso publico, que irá auxiliar os professores criando um banco de questões online onde os alunos podem acessar o conteúdo e responder as questões de modo a fixar o conteúdo da aula.
+A ferramenta abrange também o público de pessoas com deficiência visual, com um site adaptado e testado em programas e sites de acessibilidade para que torne a navegação facil e natural para o usuário.
+Atualmente não existe uma preocupação por parte dos desenvolvedores em tornar o site acessível para usuários que possuem algum tipo de deficiência. O cuidado com o design do site acaba sobrepondo os cuidados com acessibilidade.
+Considerando esses problemas, a ferramenta em questão foi baseada na cartilha da "W3C Brasil" e nas dicas de boas práticas de acessibilidade do site "Web Para Todos".
+Contudo esta ferramenta busca além de ser acessível, tornar o site inclusivo. De forma que o mesmo site acessado com pessoas que não possuem deficiencia visual, sejaá o mesmo site acessado por deficientes visuais.
