@@ -1,6 +1,7 @@
 <?php
-	if($_SESSION["login"]==0){
-		header('Location:../index.html');
+	session_start();
+	if($_SESSION['status'] != 1){
+		header('Location: ../index.html');
 	}
 ?>
 <!DOCTYPE html>
@@ -11,32 +12,27 @@
 	<link rel="stylesheet" type="text/css" href="../css/cssPrincipal.css">
 </head>
 <body>
+	<header>
+		<nav class="super">
+			<ul id="sup-left" class="super">
+				<li>Home</li>
+			</ul>
+			<ul id="sup-right" class="super">
+				<?php
+						echo $_SESSION['nome'];
+				?>
+			</ul>
+		</nav>			
+		<h1>Arena Academy</h1>
+	</header>
 	<main>
-		<header>
-			
-			<nav class="super">
-				<ul id="sup-left">
-					<li>Home</li>
-					<li>Voltar</li>
-				</ul>
-				<ul id="sup-right">
-					<li></li>
-					<li>FACEBOOK</li>
-					<li>LINKEDIN</li>
-				</ul>
-			</nav>			
-			<h1>Arena Academy</h1>
-		</header>
-		<nav id="menu-princ">
-			
-		</nav>
-		<div id="content">
-			<?php
-				session_start();
-				echo $_SESSION['nome'];?>
-		</div>
-		<div id="options">
-			
+		<div id="meio_content">
+			<div id="options">
+				
+			</div>
+			<div id="content">
+				
+			</div>
 		</div>
 		<footer>
 			
