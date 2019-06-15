@@ -10,29 +10,29 @@
 
         function confLogin($login, $senha){
 
-            $conBd = new BDcon;
-            $status = $conBd->conectar() or die (header('Location:../paginas/paginas_alertas/alertaBD.html'));
-
             $this->login = $login;
             $this->senha = md5($senha);
 
-            $query = "SELECT nome_usu, login_usu, email_usu FROM usuario WHERE login_usu = '$this->login' AND senha = '$this->senha';";
-            echo $query;
-            $dados = mysqli_query($status, $query);
-            $rows = mysqli_num_rows($dados);
+            $query = $conn->prepare("SELECT nome_usu, login_usu, email_usu, tipo_usu FROM usuario WHERE login_usu = :login AND senha = :senha;)";
+            $query->bindParam(':login', $this->login);
+            $query->bindParam(':senha', $this->senha);
+
+            $query->execute();
+
+            $rows = $query->rowCount();
 
             if ($rows != 1){
-                mysqli_close($status);
                 echo 'Login ou senha incorreto';
-                header('Location:../index.html');
+                $_SESSION['status'] = 0;
             }else{
 
                 //recebe retorno do banco e guarda em variaveis de sessão
-                list($nome, $login, $email) = mysqli_fetch_array($dados);
+                $list = $query->fecth(PDO::FETCH_OBJ);
                 
-                $_SESSION['nome'] = $nome;
-                $_SESSION['login'] = $login;
-                $_SESSION['email'] = $email;
+                $_SESSION['nome'] = $list->nome_usu;
+                $_SESSION['login'] = $list->login_usu;
+                $_SESSION['email'] = $list->email_usu;
+                $_SESSION['tipó'] = $list->tipo_usu;
                 $_SESSION['status'] = 1;
 
                 mysqli_close($status);
