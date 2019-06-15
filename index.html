@@ -1,24 +1,86 @@
 
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="css/teleLogin.css">
-    </head>
-    <body>
-        <main>
-            <h1>Arena Academy</h1>
-            <div id="total">
-                <form action="php/login.php" method="Post">
-                    <label for="login" class="texto">Usuário</label>
-                    <input type="text" name="login" id="login" class="campo" required/><br>
-                    <label for="senha" class="texto">Senha</label>
-                    <input type="password" name="senha" id="senha" class="campo" required/><br><br>
-                    <input type="submit" value="ENTRAR" id="botaoLogin" />
-                </form>
+<head>
+    <title>Portal Fixar</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="javascript/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function($){
+
+            $('.perguntas').click(function(event){
+                event.preventDefault();
+                form = ($(this).attr('value') == 'multipla' ? 'html/formularioM.html' : 'html/formularioD.html');
+                $('#content').load(form);
+            })
+
+        })
+
+    </script>
+    <style type="text/css">
+        
+        body{
+            width: 100%;
+            background-color: #53BD9B;
+            font-size: 20px;
+        }
+
+        #meio{
+            width: 100%;
+            display: flex;
+        }
+
+        #titulo{
+            text-align: center;
+        }
+
+        #menu-lateral{
+            width: 10%;
+            width: 20%;
+            background-color: white;
+        }
+
+        #menu-secundario ul li{
+            display: block;
+            list-style: none;
+
+            padding: 2%;
+            background-color: white;
+        }
+
+        #conteudo{
+            width: 70%;
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div id="titulo">
+                <h1>Portal Fixar</h1>
             </div>
-            <a href="paginas/cadastro.html">Cadastro de Usuário</a>
-        </main>
-    </body>
+        </header>
+        <div  id="meio">
+            <div id="menu-lateral" class="meio">
+                <nav id="menu-secundario">
+                    <ul>
+                        <li>opção1</li>
+                        <li>opção2</li>
+                        <li>opção3</li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="conteudo">
+                    <!-- Aqui vai o conteudo principal -->
+                    <h1>Listagem de perguntas</h1>
+            </div>
+        </div>
+        <footer>
+            
+        </footer>
+    </main>
+</body>
 </html>
